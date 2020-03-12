@@ -1,6 +1,6 @@
 {
     "name": "@neoskop/pulumi-utils-sdk",
-    "description": "Utilities for Pulumi sdk development",
+    "description": "Utilities for Pulumi SDK development",
     "version": "0.0.0",
     "repository": "https://github.com/neoskop/pulumi-utils",
     "author": "Mark Wecke <wecke@neoskop.de>",
@@ -19,6 +19,7 @@
     },
     "dependencies": {
         "@neoskop/pulumi-utils-common": "0.0.0",
+        "@pulumi/pulumi": "1.12.1",
         "tslib": "1.11.1"
     },
     "devDependencies": {

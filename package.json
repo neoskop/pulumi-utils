@@ -10,7 +10,7 @@
     "workspaces": [
         "modules/common",
         "modules/grpc",
-        "modules/client",
+        "modules/sdk",
         "modules/plugin"
     ],
     "prettier": {
