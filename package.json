@@ -4,8 +4,12 @@
     "version": "0.0.0",
     "license": "MIT",
     "private": true,
+    "scripts": {
+        "generate-grpc-code": "./bin/generate-grpc-code.sh"
+    },
     "workspaces": [
         "modules/common",
+        "modules/grpc",
         "modules/client",
         "modules/plugin"
     ],

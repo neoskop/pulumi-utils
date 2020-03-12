@@ -1,0 +1,40 @@
+{
+    "name": "@neoskop/pulumi-utils-grpc",
+    "description": "GRPC code for Pulumi plugins",
+    "version": "0.0.0",
+    "repository": "https://github.com/neoskop/pulumi-utils",
+    "author": "Mark Wecke <wecke@neoskop.de>",
+    "license": "MIT",
+    "main": "src/index.ts",
+    "scripts": {
+        "clean": "rimraf dist",
+        "prebuild": "npm run clean",
+        "build": "tsc",
+        "postbuild": "cp -r src/grpc dist/grpc && ../../bin/bundle.sh grpc",
+        "watch": "tsc -w",
+        "test": "jest",
+        "publish-next": "npm run build && npm publish dist --tag next",
+        "publish-latest-only": "npm run build && npm publish dist",
+        "publish-latest": "npm run publish-latest-only && npm dist-tag add `jq '.name' package.json -r`@`jq '.version' package.json -r` next"
+    },
+    "dependencies": {
+        "@types/google-protobuf": "3.7.2",
+        "@types/node": "13.9.0",
+        "google-protobuf": "3.11.4",
+        "grpc": "1.24.2",
+        "tslib": "1.11.1"
+    },
+    "devDependencies": {
+        "@pulumi/sources": "git+https://github.com/pulumi/pulumi",
+        "@types/jest": "25.1.4",
+        "@types/prettier": "1.19.0",
+        "jest": "25.1.0",
+        "jest-circus": "25.1.0",
+        "jest-spec-reporter": "1.0.12",
+        "prettier": "1.19.1",
+        "rimraf": "3.0.2",
+        "ts-jest": "25.2.1",
+        "ts-node": "8.6.2",
+        "typescript": "3.8.3"
+    }
+}
