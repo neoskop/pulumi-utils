@@ -24,9 +24,11 @@ export class Urn {
             try {
                 return { raw, ...Tok.parse(raw) };
             } catch (e) {
+                /* istanbul ignore else */
                 if (e instanceof InvalidTokError) {
                     return { raw };
                 }
+                /* istanbul ignore next */
                 throw e;
             }
         });

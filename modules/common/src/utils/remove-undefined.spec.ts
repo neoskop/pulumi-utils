@@ -20,4 +20,10 @@ describe('utils / remove-undefined', () => {
     it('should handle scalars in arrays', () => {
         expect(removeUndefined({ arr: ['foobar'] })).toEqual({ arr: ['foobar'] });
     });
+
+    it('should throw on invalid values', () => {
+        expect(() => {
+            removeUndefined({ date: new Date() });
+        }).toThrow(/invalid value/i);
+    });
 });

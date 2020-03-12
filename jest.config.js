@@ -4,5 +4,7 @@ module.exports = {
     reporters: ['jest-spec-reporter'],
     moduleFileExtensions: ['js', 'json', 'jsx', 'ts', 'tsx', 'node', 'd.ts'],
     testRunner: 'jest-circus/runner',
-    testPathIgnorePatterns: [ 'node_modules', '.build', 'bundles', 'dist' ]
+    testPathIgnorePatterns: [ 'node_modules', '.build', 'bundles', 'dist' ],
+    collectCoverage: true,
+    coverageReporters: ["html", "json", "lcov", "text", "clover"]
 };
