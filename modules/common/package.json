@@ -19,6 +19,7 @@
     },
     "dependencies": {
         "@types/google-protobuf": "3.7.2",
+        "@types/node": "13.9.0",
         "google-protobuf": "3.11.4",
         "tslib": "1.11.1"
     },
