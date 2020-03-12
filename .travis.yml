@@ -1,0 +1,13 @@
+language: node_js
+cache: yarn
+branches:
+  only:
+    - master
+    - develop
+    - /^hotfix\//
+    - /^release\//
+before_install:
+  - mkdir modules/plugin/dist
+script:
+  - (cd modules/plugin && yarn build)
+  - (cd sdk/nodejs && yarn build)
