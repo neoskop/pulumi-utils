@@ -9,13 +9,13 @@ describe('utils / tok', () => {
         });
 
         it('should parse tok', () => {
-            expect(Tok.parse('foo:bar:foobar')).toEqual({ plugin: 'foo', group: 'bar', identifier: 'foobar' });
+            expect(Tok.parse('foo:bar:foobar')).toEqual({ plugin: 'foo', kind: 'bar', name: 'foobar' });
         });
     });
 
     describe('stringify', () => {
         it('should stringify by object', () => {
-            expect(Tok.stringify({ plugin: 'foo', group: 'bar', identifier: 'foobar' })).toEqual('foo:bar:foobar');
+            expect(Tok.stringify({ plugin: 'foo', kind: 'bar', name: 'foobar' })).toEqual('foo:bar:foobar');
         });
 
         it('should stringify by positional parameters', () => {

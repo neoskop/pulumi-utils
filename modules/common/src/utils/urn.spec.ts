@@ -19,8 +19,8 @@ describe('utils / urn', () => {
                     resource: {
                         raw: 'foobar:grp:id',
                         plugin: 'foobar',
-                        group: 'grp',
-                        identifier: 'id'
+                        kind: 'grp',
+                        name: 'id'
                     }
                 },
                 name: 'resource-name'
@@ -38,15 +38,15 @@ describe('utils / urn', () => {
                         {
                             raw: 'parent:pgrp:pid',
                             plugin: 'parent',
-                            group: 'pgrp',
-                            identifier: 'pid'
+                            kind: 'pgrp',
+                            name: 'pid'
                         }
                     ],
                     resource: {
                         raw: 'foobar:grp:id',
                         plugin: 'foobar',
-                        group: 'grp',
-                        identifier: 'id'
+                        kind: 'grp',
+                        name: 'id'
                     }
                 },
                 name: 'resource-name'
@@ -66,21 +66,21 @@ describe('utils / urn', () => {
                         {
                             raw: 'parent1:p1grp:p1id',
                             plugin: 'parent1',
-                            group: 'p1grp',
-                            identifier: 'p1id'
+                            kind: 'p1grp',
+                            name: 'p1id'
                         },
                         {
                             raw: 'parent2:p2grp:p2id',
                             plugin: 'parent2',
-                            group: 'p2grp',
-                            identifier: 'p2id'
+                            kind: 'p2grp',
+                            name: 'p2id'
                         }
                     ],
                     resource: {
                         raw: 'foobar:grp:id',
                         plugin: 'foobar',
-                        group: 'grp',
-                        identifier: 'id'
+                        kind: 'grp',
+                        name: 'id'
                     }
                 },
                 name: 'resource-name'

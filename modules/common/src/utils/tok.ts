@@ -12,28 +12,28 @@ export class Tok {
 
         return {
             plugin: match[1],
-            group: match[2],
-            identifier: match[3]
+            kind: match[2],
+            name: match[3]
         };
     }
 
     static stringify(obj: Tok.Parsed): string;
-    static stringify(plugin: string, group: string, identifier: string): string;
-    static stringify(pluginOrObject: string | Tok.Parsed, group?: string, identifier?: string): string {
+    static stringify(plugin: string, kind: string, name: string): string;
+    static stringify(pluginOrObject: string | Tok.Parsed, kind?: string, name?: string): string {
         const plugin = typeof pluginOrObject === 'object' ? pluginOrObject.plugin : pluginOrObject;
         if (typeof pluginOrObject === 'object') {
-            ({ group, identifier } = pluginOrObject);
+            ({ kind, name } = pluginOrObject);
         }
 
-        return util.format('%s:%s:%s', plugin, group, identifier);
+        return util.format('%s:%s:%s', plugin, kind, name);
     }
 }
 
 export namespace Tok {
     export interface Parsed {
         plugin: string;
-        group: string;
-        identifier: string;
+        kind: string;
+        name: string;
     }
 }
 
