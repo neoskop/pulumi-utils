@@ -1,4 +1,4 @@
 module.exports = {
     ...require('../../jest.config'),
-    collectCoverage: false
+    projects: undefined
 }

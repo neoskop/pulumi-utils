@@ -1,3 +1,4 @@
 module.exports = {
-    ...require('../../jest.config')
+    ...require('../../jest.config'),
+    projects: undefined
 }

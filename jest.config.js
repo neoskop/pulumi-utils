@@ -8,5 +8,6 @@ module.exports = {
     coveragePathIgnorePatterns: [ 'node_modules', '.build', 'bundles', 'dist', 'src/grpc' ],
     modulePathIgnorePatterns: [ 'node_modules', '.build', 'bundles', 'dist', 'src/grpc' ],
     collectCoverage: true,
-    coverageReporters: ["html", "json", "lcov", "text", "clover"]
+    coverageReporters: ["html", "json", "lcov", "text", "clover"],
+    projects: require('./package').workspaces
 };
