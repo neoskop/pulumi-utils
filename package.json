@@ -5,7 +5,8 @@
     "license": "MIT",
     "private": true,
     "scripts": {
-        "generate-grpc-code": "./bin/generate-grpc-code.sh"
+        "generate-grpc-code": "./bin/generate-grpc-code.sh",
+        "test": "jest"
     },
     "workspaces": [
         "modules/common",
