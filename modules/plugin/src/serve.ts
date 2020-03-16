@@ -3,9 +3,11 @@ import { Server, ServerCredentials, credentials } from 'grpc';
 import { promisify } from 'util';
 import { Writable } from 'stream';
 
+export type ResourceProviderFactory = (host: EngineClient) => IResourceProviderServer;
+
 export async function serve(
     args: string[],
-    providerFactory: (host: EngineClient) => IResourceProviderServer,
+    providerFactory: ResourceProviderFactory,
     /* istanbul ignore next */ { stdout = process.stdout }: { stdout?: Writable | false } = {}
 ) {
     if (1 !== args.length) {

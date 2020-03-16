@@ -1,4 +1,4 @@
-import { ServiceError } from "./service.error"
+import { ServiceError } from './service.error';
 import { status } from 'grpc';
 
 describe('errors / service.error', () => {
@@ -50,5 +50,53 @@ describe('errors / service.error', () => {
 
             expect(serviceError.code).toBe(status.INTERNAL);
         });
-    })
-})
+    });
+
+    describe('ensure', () => {
+        it('should passthrough ServiceError', () => {
+            const error = new ServiceError('msg');
+
+            expect(ServiceError.ensure(error)).toBe(error);
+        });
+
+        it('should wrapp Error', () => {
+            const error = new Error('msg');
+            const serviceError = ServiceError.ensure(error);
+
+            expect(serviceError).toBeInstanceOf(ServiceError);
+            expect(serviceError.message).toBe(error.message);
+            expect(serviceError.error).toBe(error);
+        });
+
+        it('should wrap string', () => {
+            const serviceError = ServiceError.ensure('error-message');
+
+            expect(serviceError).toBeInstanceOf(ServiceError);
+            expect(serviceError.message).toBe('error-message');
+            expect(serviceError).not.toHaveProperty('error');
+        });
+
+        it('should wrap JSON content', () => {
+            const serviceError = ServiceError.ensure({ message: 'msg' });
+
+            expect(serviceError).toBeInstanceOf(ServiceError);
+            expect(serviceError.message).toBe('{"message":"msg"}');
+            expect(serviceError).not.toHaveProperty('error');
+        });
+
+        it('should fallback to toString on JSON stringify error', () => {
+            const object: any = {};
+            object.object = object;
+            const serviceError = ServiceError.ensure(object);
+
+            expect(serviceError).toBeInstanceOf(ServiceError);
+            expect(serviceError.message).toBe('[object Object]');
+            expect(serviceError).not.toHaveProperty('error');
+        });
+
+        it('should fallback to default message on null-like error', () => {
+            expect(ServiceError.ensure(null).message).toBe('unknown');
+            expect(ServiceError.ensure(undefined).message).toBe('unknown');
+        });
+    });
+});
