@@ -6,7 +6,8 @@
     "private": true,
     "scripts": {
         "generate-grpc-code": "./bin/generate-grpc-code.sh",
-        "test": "jest"
+        "test": "jest",
+        "build": "for dir in modules/*; do (cd $dir && npm run build); done;"
     },
     "workspaces": [
         "modules/common",
