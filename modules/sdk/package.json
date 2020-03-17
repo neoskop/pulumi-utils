@@ -1,7 +1,7 @@
 {
     "name": "@neoskop/pulumi-utils-sdk",
     "description": "Utilities for Pulumi SDK development",
-    "version": "0.1.0-rc.0",
+    "version": "0.1.0-rc.1",
     "repository": "https://github.com/neoskop/pulumi-utils",
     "author": "Mark Wecke <wecke@neoskop.de>",
     "license": "MIT",
@@ -18,7 +18,7 @@
         "publish-latest": "npm run publish-latest-only && npm dist-tag add `jq '.name' package.json -r`@`jq '.version' package.json -r` next"
     },
     "dependencies": {
-        "@neoskop/pulumi-utils-common": "0.1.0-rc.0",
+        "@neoskop/pulumi-utils-common": "0.1.0-rc.1",
         "@pulumi/pulumi": "1.12.1",
         "tslib": "1.11.1"
     },

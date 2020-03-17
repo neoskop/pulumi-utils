@@ -1,7 +1,7 @@
 {
     "name": "@neoskop/pulumi-utils-common",
     "description": "Utilities for Pulumi",
-    "version": "0.1.0-rc.0",
+    "version": "0.1.0-rc.1",
     "repository": "https://github.com/neoskop/pulumi-utils",
     "author": "Mark Wecke <wecke@neoskop.de>",
     "license": "MIT",
