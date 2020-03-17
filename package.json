@@ -8,7 +8,10 @@
         "generate-grpc-code": "./bin/generate-grpc-code.sh",
         "test": "jest",
         "coverage": "jest && cat coverage/lcov.info | coveralls",
-        "build": "for dir in modules/*; do (cd $dir && npm run build); done;"
+        "build": "./bin/run-in-each-module.sh npm run build",
+        "publish-next": "npm run build && ./bin/run-in-each-module.sh npm publish dist --tag next",
+        "publish-latest-only": "npm run build && ./bin/run-in-each-module.sh npm publish dist",
+        "publish-latest": "npm run publish-latest-only && ./bin/run-in-each-module.sh \"npm dist-tag add `jq '.name' package.json -r`@`jq '.version' package.json -r` next\""
     },
     "workspaces": [
         "modules/common",
