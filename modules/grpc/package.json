@@ -1,7 +1,7 @@
 {
     "name": "@neoskop/pulumi-utils-grpc",
     "description": "GRPC code for Pulumi plugins",
-    "version": "0.0.0",
+    "version": "0.1.0-rc.0",
     "repository": "https://github.com/neoskop/pulumi-utils",
     "author": "Mark Wecke <wecke@neoskop.de>",
     "license": "MIT",
