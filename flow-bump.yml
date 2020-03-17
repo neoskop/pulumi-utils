@@ -2,7 +2,7 @@ options:
     commitMessage: 'chore(release): bump to version %VERSION%'
 scripts:
     bump:
-        - 'jq ".version |= \"$FB_VERSION\" | ." modules/common/package.json > tmp.json && mv tmp.json modules/common/package.json && git add modules/common/package.json'
-        - 'jq ".version |= \"$FB_VERSION\" | ." modules/grpc/package.json > tmp.json && mv tmp.json modules/grpc/package.json && git add modules/grpc/package.json'
-        - 'jq ".version |= \"$FB_VERSION\" | jq ".dependencies[\"@neoskop/pulumi-utils-common\"] |= \"$FB_VERSION\" | ." modules/sdk/package.json > tmp.json && mv tmp.json modules/sdk/package.json && git add modules/sdk/package.json'
-        - 'jq ".version |= \"$FB_VERSION\" | jq ".dependencies[\"@neoskop/pulumi-utils-common\"] |= \"$FB_VERSION\" | jq ".dependencies[\"@neoskop/pulumi-utils-grpc\"] |= \"$FB_VERSION\" | ." modules/plugin/package.json > tmp.json && mv tmp.json modules/plugin/package.json && git add modules/plugin/package.json'
+        - 'jq ".version |= \"$FB_VERSION\" | ." modules/common/package.json > tmp1.json && mv tmp1.json modules/common/package.json && git add modules/common/package.json'
+        - 'jq ".version |= \"$FB_VERSION\" | ." modules/grpc/package.json > tmp2.json && mv tmp2.json modules/grpc/package.json && git add modules/grpc/package.json'
+        - 'jq ".version |= \"$FB_VERSION\" | jq ".dependencies[\"@neoskop/pulumi-utils-common\"] |= \"$FB_VERSION\" | ." modules/sdk/package.json > tmp3.json && mv tmp3.json modules/sdk/package.json && git add modules/sdk/package.json'
+        - 'jq ".version |= \"$FB_VERSION\" | jq ".dependencies[\"@neoskop/pulumi-utils-common\"] |= \"$FB_VERSION\" | jq ".dependencies[\"@neoskop/pulumi-utils-grpc\"] |= \"$FB_VERSION\" | ." modules/plugin/package.json > tmp4.json && mv tmp4.json modules/plugin/package.json && git add modules/plugin/package.json'
