@@ -5,7 +5,7 @@ import { ServerUnaryCall } from 'grpc';
 import { RequestWithUrn } from './provider.interface';
 import { ProviderResolver, ProviderResolverImpl } from './provider.resolver';
 import { mockServerUnaryCall } from '@neoskop/pulumi-utils-grpc/src/testing';
-import { utils } from '@neoskop/pulumi-utils-common';
+import { InvalidTokError } from '@neoskop/pulumi-utils-common';
 
 class ProviderByKind {
     kind = 'kind-provider';
@@ -61,7 +61,7 @@ describe('provider / provider.resolver', () => {
                 }
             } as RequestWithUrn);
 
-            expect(() => resolver.resolve(req)).toThrow(new utils.InvalidTokError('not-valid-tok'));
+            expect(() => resolver.resolve(req)).toThrow(new InvalidTokError('not-valid-tok'));
         });
 
         it('should return undefined on unknwon resolver', () => {

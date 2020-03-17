@@ -11,7 +11,7 @@ import { ServerUnaryCall } from 'grpc';
 import { Inject, Injectable, Optional } from 'injection-js';
 
 import { ACCEPT_SECRETS, NAME, CONFIGURATION_VALIDATOR } from './tokens';
-import { protobuf } from '@neoskop/pulumi-utils-common';
+import { Struct } from '@neoskop/pulumi-utils-common';
 
 export abstract class Configuration {
     abstract configure(req: ServerUnaryCall<ConfigureRequest>): Promise<ConfigureResponse> | ConfigureResponse;
@@ -59,7 +59,7 @@ export class ConfigurationImpl extends Configuration {
 
         const response = new CheckResponse();
 
-        response.setInputs(protobuf.Struct.fromJavaScript(news || {}));
+        response.setInputs(Struct.fromJavaScript(news || {}));
         try {
             if (this.configurationValidator) {
                 await this.configurationValidator(news as {}, olds as {});

@@ -1,4 +1,4 @@
-import { utils } from '@neoskop/pulumi-utils-common';
+import { Urn, InvalidTokError, Tok } from '@neoskop/pulumi-utils-common';
 import { InvokeRequest } from '@neoskop/pulumi-utils-grpc';
 import { ServerUnaryCall } from 'grpc';
 import { Inject, Injectable } from 'injection-js';
@@ -18,13 +18,13 @@ export class ProviderResolverImpl extends ProviderResolver {
 
     protected getRequestKind(request: ServerUnaryCall<RequestWithUrn | InvokeRequest>): string | undefined {
         if ('getUrn' in request.request) {
-            const urn = utils.Urn.parse(request.request.getUrn());
+            const urn = Urn.parse(request.request.getUrn());
             if (!urn.type.resource.kind) {
-                throw new utils.InvalidTokError(urn.type.resource.raw);
+                throw new InvalidTokError(urn.type.resource.raw);
             }
             return urn.type.resource.kind;
         } else if ('getTok' in request.request) {
-            const tok = utils.Tok.parse(request.request.getTok());
+            const tok = Tok.parse(request.request.getTok());
             return tok.kind;
         }
 

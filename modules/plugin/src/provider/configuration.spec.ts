@@ -11,7 +11,7 @@ import {
     DiffRequest,
     DiffResponse
 } from '@neoskop/pulumi-utils-grpc';
-import { protobuf } from '@neoskop/pulumi-utils-common';
+import { Struct } from '@neoskop/pulumi-utils-common';
 
 describe('provider / configuration', () => {
     describe('ConfigurationImpl', () => {
@@ -43,8 +43,8 @@ describe('provider / configuration', () => {
                 const r = new CheckRequest();
                 const req = mockServerUnaryCall(r);
 
-                r.setNews(protobuf.Struct.fromJavaScript({}));
-                r.setOlds(protobuf.Struct.fromJavaScript({}));
+                r.setNews(Struct.fromJavaScript({}));
+                r.setOlds(Struct.fromJavaScript({}));
 
                 expect(await configuration.checkConfig(req)).toBeInstanceOf(CheckResponse);
             });
@@ -53,8 +53,8 @@ describe('provider / configuration', () => {
                 const r = new CheckRequest();
                 const req = mockServerUnaryCall(r);
 
-                r.setNews(protobuf.Struct.fromJavaScript({ foo: 'bar' }));
-                r.setOlds(protobuf.Struct.fromJavaScript({}));
+                r.setNews(Struct.fromJavaScript({ foo: 'bar' }));
+                r.setOlds(Struct.fromJavaScript({}));
 
                 const response = await configuration.checkConfig(req);
                 expect(response.getInputs()?.toJavaScript()).toEqual({ foo: 'bar' });
@@ -71,8 +71,8 @@ describe('provider / configuration', () => {
                 const r = new CheckRequest();
                 const req = mockServerUnaryCall(r);
 
-                r.setNews(protobuf.Struct.fromJavaScript({}));
-                r.setOlds(protobuf.Struct.fromJavaScript({}));
+                r.setNews(Struct.fromJavaScript({}));
+                r.setOlds(Struct.fromJavaScript({}));
 
                 const response = await configuration.checkConfig(req);
                 expect(response).toBeInstanceOf(CheckResponse);
@@ -87,8 +87,8 @@ describe('provider / configuration', () => {
                 const r = new CheckRequest();
                 const req = mockServerUnaryCall(r);
 
-                r.setNews(protobuf.Struct.fromJavaScript({}));
-                r.setOlds(protobuf.Struct.fromJavaScript({}));
+                r.setNews(Struct.fromJavaScript({}));
+                r.setOlds(Struct.fromJavaScript({}));
 
                 await expect(configuration.checkConfig(req)).rejects.toEqual(new Error('err msg'));
             });
@@ -113,8 +113,8 @@ describe('provider / configuration', () => {
                 const r = new DiffRequest();
                 const req = mockServerUnaryCall(r);
 
-                r.setNews(protobuf.Struct.fromJavaScript({}));
-                r.setOlds(protobuf.Struct.fromJavaScript({}));
+                r.setNews(Struct.fromJavaScript({}));
+                r.setOlds(Struct.fromJavaScript({}));
 
                 expect(await configuration.diffConfig(req)).toBeInstanceOf(DiffResponse);
             });
@@ -123,8 +123,8 @@ describe('provider / configuration', () => {
                 const r = new DiffRequest();
                 const req = mockServerUnaryCall(r);
 
-                r.setNews(protobuf.Struct.fromJavaScript({ updating: 'foobar', replacing: 'foo' }));
-                r.setOlds(protobuf.Struct.fromJavaScript({ updating: 'foobar', replacing: 'bar' }));
+                r.setNews(Struct.fromJavaScript({ updating: 'foobar', replacing: 'foo' }));
+                r.setOlds(Struct.fromJavaScript({ updating: 'foobar', replacing: 'bar' }));
 
                 const response = await configuration.diffConfig(req);
                 expect(response.getReplacesList()).toEqual(['replacing']);
@@ -135,8 +135,8 @@ describe('provider / configuration', () => {
                 const r = new DiffRequest();
                 const req = mockServerUnaryCall(r);
 
-                r.setNews(protobuf.Struct.fromJavaScript({ updating: 'foobar', replacing: 'foo' }));
-                r.setOlds(protobuf.Struct.fromJavaScript({ updating: 'bar', replacing: 'foo' }));
+                r.setNews(Struct.fromJavaScript({ updating: 'foobar', replacing: 'foo' }));
+                r.setOlds(Struct.fromJavaScript({ updating: 'bar', replacing: 'foo' }));
 
                 const response = await configuration.diffConfig(req);
                 expect(response.getReplacesList()).toEqual([]);
@@ -147,8 +147,8 @@ describe('provider / configuration', () => {
                 const r = new DiffRequest();
                 const req = mockServerUnaryCall(r);
 
-                r.setNews(protobuf.Struct.fromJavaScript({ updating: 'foobar', replacing: 'foo' }));
-                r.setOlds(protobuf.Struct.fromJavaScript({ updating: 'foobar', replacing: 'foo' }));
+                r.setNews(Struct.fromJavaScript({ updating: 'foobar', replacing: 'foo' }));
+                r.setOlds(Struct.fromJavaScript({ updating: 'foobar', replacing: 'foo' }));
 
                 const response = await configuration.diffConfig(req);
                 expect(response.getReplacesList()).toEqual([]);
@@ -163,8 +163,8 @@ describe('provider / configuration', () => {
                 const r = new DiffRequest();
                 const req = mockServerUnaryCall(r);
 
-                r.setNews(protobuf.Struct.fromJavaScript({}));
-                r.setOlds(protobuf.Struct.fromJavaScript({}));
+                r.setNews(Struct.fromJavaScript({}));
+                r.setOlds(Struct.fromJavaScript({}));
 
                 await expect(configuration.diffConfig(req)).rejects.toEqual(new Error('err msg'));
             });
@@ -175,8 +175,8 @@ describe('provider / configuration', () => {
                 const r = new DiffRequest();
                 const req = mockServerUnaryCall(r);
 
-                r.setNews(protobuf.Struct.fromJavaScript({}));
-                r.setOlds(protobuf.Struct.fromJavaScript({}));
+                r.setNews(Struct.fromJavaScript({}));
+                r.setOlds(Struct.fromJavaScript({}));
 
                 const response = await configuration.diffConfig(req);
                 expect(response.getReplacesList()).toEqual([]);
