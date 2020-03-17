@@ -15,4 +15,4 @@
 [npm-badge-common]: https://img.shields.io/npm/v/@neoskop/pulumi-utils-common
 [npm-link-common]: https://npmjs.com/package/@neoskop/pulumi-utils-common
 [licence-link]: https://github.com/neoskop/pulumi-utils/blob/master/LICENSE
-[licence-common]: https://img.shields.io/npm/l/%40neoskop%2Fpulumi-utils-common.svg
+[licence-common]: https://img.shields.io/npm/l/%40neoskop%2Fpulumi-utils-common

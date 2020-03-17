@@ -47,7 +47,7 @@ A collection of helper utilities for SDK development.
 [npm-badge-sdk]: https://img.shields.io/npm/v/@neoskop/pulumi-utils-sdk
 [npm-link-sdk]: https://npmjs.com/package/@neoskop/pulumi-utils-sdk
 [licence-link]: https://github.com/neoskop/pulumi-utils/blob/master/LICENSE
-[licence-common]: https://img.shields.io/npm/l/%40neoskop%2Fpulumi-utils-common.svg
-[licence-grpc]: https://img.shields.io/npm/l/%40neoskop%2Fpulumi-utils-grpc.svg
-[licence-plugin]: https://img.shields.io/npm/l/%40neoskop%2Fpulumi-utils-plugin.svg
-[licence-sdk]: https://img.shields.io/npm/l/%40neoskop%2Fpulumi-utils-sdk.svg
+[licence-common]: https://img.shields.io/npm/l/%40neoskop%2Fpulumi-utils-common
+[licence-grpc]: https://img.shields.io/npm/l/%40neoskop%2Fpulumi-utils-grpc
+[licence-plugin]: https://img.shields.io/npm/l/%40neoskop%2Fpulumi-utils-plugin
+[licence-sdk]: https://img.shields.io/npm/l/%40neoskop%2Fpulumi-utils-sdk

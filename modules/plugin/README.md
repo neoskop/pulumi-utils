@@ -15,4 +15,4 @@
 [npm-badge-plugin]: https://img.shields.io/npm/v/@neoskop/pulumi-utils-plugin
 [npm-link-plugin]: https://npmjs.com/package/@neoskop/pulumi-utils-plugin
 [licence-link]: https://github.com/neoskop/pulumi-utils/blob/master/LICENSE
-[licence-plugin]: https://img.shields.io/npm/l/%40neoskop%2Fpulumi-utils-plugin.svg
+[licence-plugin]: https://img.shields.io/npm/l/%40neoskop%2Fpulumi-utils-plugin
