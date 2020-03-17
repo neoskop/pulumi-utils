@@ -7,6 +7,7 @@
     "scripts": {
         "generate-grpc-code": "./bin/generate-grpc-code.sh",
         "test": "jest",
+        "coverage": "jest && cat coverage/lcov.info | coveralls",
         "build": "for dir in modules/*; do (cd $dir && npm run build); done;"
     },
     "workspaces": [
@@ -51,6 +52,7 @@
         ]
     },
     "devDependencies": {
+        "coveralls": "3.0.9",
         "husky": "4.2.3",
         "lint-staged": "10.0.8"
     }
