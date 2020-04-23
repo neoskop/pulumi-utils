@@ -23,5 +23,7 @@ export async function serve(
 
     stdout && stdout.write(`${port}\n`);
 
+    server.start();
+
     return { server, port };
 }
