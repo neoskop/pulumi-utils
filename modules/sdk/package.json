@@ -20,8 +20,7 @@
     "dependencies": {
         "@pulumi-utils/common": "0.1.0-rc.3",
         "@pulumi/pulumi": "1.12.1",
-        "tslib": "1.11.1",
-        "@neoskop/pulumi-utils-common": "0.1.0-rc.5"
+        "tslib": "1.11.1"
     },
     "devDependencies": {
         "@types/jest": "25.1.4",

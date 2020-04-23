@@ -9,8 +9,8 @@
         "test": "jest",
         "coverage": "jest && cat coverage/lcov.info | coveralls",
         "build": "./bin/run-in-each-module.sh npm run build",
-        "publish-next": "npm run build && ./bin/run-in-each-module.sh npm publish dist --tag next",
-        "publish-latest-only": "npm run build && ./bin/run-in-each-module.sh npm publish dist",
+        "publish-next": "npm run build && ./bin/run-in-each-module.sh npm publish dist --tag next --access=public",
+        "publish-latest-only": "npm run build && ./bin/run-in-each-module.sh npm publish dist --access=public",
         "publish-latest": "npm run publish-latest-only && ./bin/run-in-each-module.sh \"npm dist-tag add \\`jq '.name' package.json -r\\`@\\`jq '.version' package.json -r\\` next\""
     },
     "workspaces": [
