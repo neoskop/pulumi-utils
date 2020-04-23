@@ -6,12 +6,12 @@ import {
     DiffRequest,
     DiffResponse,
     CheckFailure
-} from '@neoskop/pulumi-utils-grpc';
+} from '@pulumi-utils/grpc';
 import { ServerUnaryCall } from 'grpc';
 import { Inject, Injectable, Optional } from 'injection-js';
 
 import { ACCEPT_SECRETS, NAME, CONFIGURATION_VALIDATOR } from './tokens';
-import { Struct } from '@neoskop/pulumi-utils-common';
+import { Struct } from '@pulumi-utils/common';
 
 export abstract class Configuration {
     abstract configure(req: ServerUnaryCall<ConfigureRequest>): Promise<ConfigureResponse> | ConfigureResponse;

@@ -1,5 +1,5 @@
 {
-    "name": "@neoskop/pulumi-utils-plugin",
+    "name": "@pulumi-utils/plugin",
     "description": "Utilities for Pulumi plugin development",
     "version": "0.1.0-rc.3",
     "repository": "https://github.com/neoskop/pulumi-utils",
@@ -18,8 +18,8 @@
         "publish-latest": "npm run publish-latest-only && npm dist-tag add `jq '.name' package.json -r`@`jq '.version' package.json -r` next"
     },
     "dependencies": {
-        "@neoskop/pulumi-utils-common": "0.1.0-rc.3",
-        "@neoskop/pulumi-utils-grpc": "0.1.0-rc.3",
+        "@pulumi-utils/common": "0.1.0-rc.3",
+        "@pulumi-utils/grpc": "0.1.0-rc.3",
         "injection-js": "2.3.0",
         "rxjs": "6.5.4",
         "tslib": "1.11.1"

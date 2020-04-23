@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { Configuration, ConfigurationImpl } from './configuration';
 import {} from './configuration';
-import { mockServerUnaryCall } from '@neoskop/pulumi-utils-grpc/src/testing';
+import { mockServerUnaryCall } from '@pulumi-utils/grpc/src/testing';
 import {
     ConfigureRequest,
     ConfigureResponse,
@@ -10,8 +10,8 @@ import {
     CheckFailure,
     DiffRequest,
     DiffResponse
-} from '@neoskop/pulumi-utils-grpc';
-import { Struct } from '@neoskop/pulumi-utils-common';
+} from '@pulumi-utils/grpc';
+import { Struct } from '@pulumi-utils/common';
 
 describe('provider / configuration', () => {
     describe('ConfigurationImpl', () => {

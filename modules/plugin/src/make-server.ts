@@ -1,4 +1,4 @@
-import { EngineClient, GetSchemaResponse, PluginInfo } from '@neoskop/pulumi-utils-grpc';
+import { EngineClient, GetSchemaResponse, PluginInfo } from '@pulumi-utils/grpc';
 import { Injector, Provider, ReflectiveInjector } from 'injection-js';
 
 import { PluginInfoResolver, PluginInfoResolverImpl } from './provider/plugin-info.resolver';

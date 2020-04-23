@@ -10,8 +10,8 @@ import {
     GetSchemaRequest,
     GetSchemaResponse,
     PluginInfo
-} from '@neoskop/pulumi-utils-grpc';
-import { mockServerUnaryCall } from '@neoskop/pulumi-utils-grpc/src/testing';
+} from '@pulumi-utils/grpc';
+import { mockServerUnaryCall } from '@pulumi-utils/grpc/src/testing';
 import { Empty } from 'google-protobuf/google/protobuf/empty_pb';
 import { status } from 'grpc';
 

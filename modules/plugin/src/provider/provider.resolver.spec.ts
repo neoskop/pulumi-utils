@@ -1,11 +1,11 @@
 import 'reflect-metadata';
-import { InvokeRequest } from '@neoskop/pulumi-utils-grpc';
+import { InvokeRequest } from '@pulumi-utils/grpc';
 import { ServerUnaryCall } from 'grpc';
 
 import { RequestWithUrn } from './provider.interface';
 import { ProviderResolver, ProviderResolverImpl } from './provider.resolver';
-import { mockServerUnaryCall } from '@neoskop/pulumi-utils-grpc/src/testing';
-import { InvalidTokError } from '@neoskop/pulumi-utils-common';
+import { mockServerUnaryCall } from '@pulumi-utils/grpc/src/testing';
+import { InvalidTokError } from '@pulumi-utils/common';
 
 class ProviderByKind {
     kind = 'kind-provider';

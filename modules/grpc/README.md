@@ -4,7 +4,7 @@
 [![NPM version][npm-badge-grpc]][npm-link-grpc]
 [![License][licence-grpc]][licence-link]
 
-# @neoskop/pulumi-utils-grpc
+# @pulumi-utils/grpc
 
 > Generated server and client code for [pulumi protobuf format](https://github.com/pulumi/pulumi/tree/master/sdk/proto).
 
@@ -12,7 +12,7 @@
 
 [MIT][licence-link]
 
-[npm-badge-grpc]: https://img.shields.io/npm/v/@neoskop/pulumi-utils-grpc
-[npm-link-grpc]: https://npmjs.com/package/@neoskop/pulumi-utils-grpc
+[npm-badge-grpc]: https://img.shields.io/npm/v/@pulumi-utils/grpc
+[npm-link-grpc]: https://npmjs.com/package/@pulumi-utils/grpc
 [licence-link]: https://github.com/neoskop/pulumi-utils/blob/master/LICENSE
 [licence-grpc]: https://img.shields.io/npm/l/%40neoskop%2Fpulumi-utils-grpc

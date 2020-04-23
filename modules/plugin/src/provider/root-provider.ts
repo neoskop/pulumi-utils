@@ -18,7 +18,7 @@ import {
     ReadResponse,
     UpdateRequest,
     UpdateResponse
-} from '@neoskop/pulumi-utils-grpc';
+} from '@pulumi-utils/grpc';
 import { Empty } from 'google-protobuf/google/protobuf/empty_pb';
 import { sendUnaryData, ServerUnaryCall, ServerWritableStream, status } from 'grpc';
 import { Inject, Injectable, Optional } from 'injection-js';

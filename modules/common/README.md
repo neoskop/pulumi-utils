@@ -4,7 +4,7 @@
 [![NPM version][npm-badge-common]][npm-link-common]
 [![License][licence-common]][licence-link]
 
-# @neoskop/pulumi-utils-common
+# @pulumi-utils/common
 
 > A collection of utilities useful in Pulumi SDK and plugin development.
 
@@ -12,7 +12,7 @@
 
 [MIT](licence-link)
 
-[npm-badge-common]: https://img.shields.io/npm/v/@neoskop/pulumi-utils-common
-[npm-link-common]: https://npmjs.com/package/@neoskop/pulumi-utils-common
+[npm-badge-common]: https://img.shields.io/npm/v/@pulumi-utils/common
+[npm-link-common]: https://npmjs.com/package/@pulumi-utils/common
 [licence-link]: https://github.com/neoskop/pulumi-utils/blob/master/LICENSE
 [licence-common]: https://img.shields.io/npm/l/%40neoskop%2Fpulumi-utils-common

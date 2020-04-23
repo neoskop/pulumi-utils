@@ -1,5 +1,5 @@
-import { Urn, InvalidTokError, Tok } from '@neoskop/pulumi-utils-common';
-import { InvokeRequest } from '@neoskop/pulumi-utils-grpc';
+import { Urn, InvalidTokError, Tok } from '@pulumi-utils/common';
+import { InvokeRequest } from '@pulumi-utils/grpc';
 import { ServerUnaryCall } from 'grpc';
 import { Inject, Injectable } from 'injection-js';
 

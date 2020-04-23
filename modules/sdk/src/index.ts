@@ -1,3 +1,3 @@
-export * from '@neoskop/pulumi-utils-common';
+export * from '@pulumi-utils/common';
 
 export * from './types';

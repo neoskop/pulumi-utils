@@ -1,5 +1,5 @@
 {
-    "name": "@neoskop/pulumi-utils-common",
+    "name": "@pulumi-utils/common",
     "description": "Utilities for Pulumi",
     "version": "0.1.0-rc.3",
     "repository": "https://github.com/neoskop/pulumi-utils",

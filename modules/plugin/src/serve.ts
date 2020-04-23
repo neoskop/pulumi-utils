@@ -1,4 +1,4 @@
-import { IResourceProviderServer, ResourceProviderService, EngineClient } from '@neoskop/pulumi-utils-grpc';
+import { IResourceProviderServer, ResourceProviderService, EngineClient } from '@pulumi-utils/grpc';
 import { Server, ServerCredentials, credentials } from 'grpc';
 import { promisify } from 'util';
 import { Writable } from 'stream';

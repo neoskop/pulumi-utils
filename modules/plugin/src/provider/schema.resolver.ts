@@ -1,4 +1,4 @@
-import { GetSchemaResponse } from '@neoskop/pulumi-utils-grpc';
+import { GetSchemaResponse } from '@pulumi-utils/grpc';
 import { Inject, Injectable } from 'injection-js';
 
 import { SCHEMA } from './tokens';
