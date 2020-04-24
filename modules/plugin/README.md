@@ -19,4 +19,4 @@ See [Pulumi Buddy](https://github.com/neoskop/pulumi-buddy) for example usage.
 [npm-badge-plugin]: https://img.shields.io/npm/v/@pulumi-utils/plugin
 [npm-link-plugin]: https://npmjs.com/package/@pulumi-utils/plugin
 [licence-link]: https://github.com/neoskop/pulumi-utils/blob/master/LICENSE
-[licence-plugin]: https://img.shields.io/npm/l/%40pulumi-util%2Fsplugin
+[licence-plugin]: https://img.shields.io/npm/l/@pulumi-utils/plugin

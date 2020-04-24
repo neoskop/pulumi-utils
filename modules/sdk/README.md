@@ -15,4 +15,4 @@
 [npm-badge-sdk]: https://img.shields.io/npm/v/@pulumi-utils/sdk
 [npm-link-sdk]: https://npmjs.com/package/@pulumi-utils/sdk
 [licence-link]: https://github.com/neoskop/pulumi-utils/blob/master/LICENSE
-[licence-sdk]: https://img.shields.io/npm/l/%40pulumi-util%2Fssdk
+[licence-sdk]: https://img.shields.io/npm/l/@pulumi-utils/sdk
