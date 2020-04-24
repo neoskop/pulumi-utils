@@ -15,4 +15,4 @@
 [npm-badge-grpc]: https://img.shields.io/npm/v/@pulumi-utils/grpc
 [npm-link-grpc]: https://npmjs.com/package/@pulumi-utils/grpc
 [licence-link]: https://github.com/neoskop/pulumi-utils/blob/master/LICENSE
-[licence-grpc]: https://img.shields.io/npm/l/%40neoskop%2Fpulumi-utils-grpc
+[licence-grpc]: https://img.shields.io/npm/l/%40pulumi-util%2Fsgrpc
