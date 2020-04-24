@@ -21,21 +21,21 @@
         "@pulumi-utils/common": "0.1.0-rc.6",
         "@pulumi-utils/grpc": "0.1.0-rc.6",
         "injection-js": "2.3.0",
-        "rxjs": "6.5.4",
+        "rxjs": "6.5.5",
         "tslib": "1.11.1"
     },
     "devDependencies": {
-        "@types/jest": "25.1.4",
-        "@types/prettier": "1.19.0",
-        "jest": "25.1.0",
-        "jest-circus": "25.1.0",
+        "@types/jest": "25.2.1",
+        "@types/prettier": "2.0.0",
+        "jest": "25.4.0",
+        "jest-circus": "25.4.0",
         "jest-spec-reporter": "1.0.12",
-        "prettier": "1.19.1",
+        "prettier": "2.0.5",
         "reflect-metadata": "0.1.13",
         "rimraf": "3.0.2",
         "stream-mock": "2.0.5",
-        "ts-jest": "25.2.1",
-        "ts-node": "8.6.2",
+        "ts-jest": "25.4.0",
+        "ts-node": "8.9.0",
         "typescript": "3.8.3"
     }
 }
