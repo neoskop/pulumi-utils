@@ -4,6 +4,10 @@ export type AsOutputs<T extends {}> = {
     [K in keyof T]: Output<T[K]>;
 };
 
-export type AsInputs<T extends {}> = {
-    [K in keyof T]: T[K] extends {} ? Input<AsInputs<T[K]>> : Input<T[K]>;
-};
+export type AsInputs<T> = T extends {}
+    ? {
+          [K in keyof T]: AsInputs<T[K]>;
+      }
+    : T extends (infer A)[]
+    ? Input<AsInputs<A>[]>
+    : Input<T>;
