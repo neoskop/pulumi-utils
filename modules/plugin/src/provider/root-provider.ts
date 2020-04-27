@@ -31,15 +31,34 @@ import { ProviderResolver } from './provider.resolver';
 import { SchemaResolver } from './schema.resolver';
 import { PROVIDERS } from './tokens';
 
+export abstract class RootProvider implements IResourceProviderServer {
+    abstract getSchema(req: ServerUnaryCall<GetSchemaRequest>, callback: sendUnaryData<GetSchemaResponse>): void;
+    abstract checkConfig(req: ServerUnaryCall<CheckRequest>, callback: sendUnaryData<CheckResponse>): void;
+    abstract diffConfig(req: ServerUnaryCall<DiffRequest>, callback: sendUnaryData<DiffResponse>): void;
+    abstract configure(req: ServerUnaryCall<ConfigureRequest>, callback: sendUnaryData<ConfigureResponse>): void;
+    abstract invoke(req: ServerUnaryCall<InvokeRequest>, callback: sendUnaryData<InvokeResponse>): void;
+    abstract streamInvoke(req: ServerWritableStream<InvokeRequest>): void;
+    abstract check(req: ServerUnaryCall<CheckRequest>, callback: sendUnaryData<CheckResponse>): void;
+    abstract diff(req: ServerUnaryCall<DiffRequest>, callback: sendUnaryData<DiffResponse>): void;
+    abstract create(req: ServerUnaryCall<CreateRequest>, callback: sendUnaryData<CreateResponse>): void;
+    abstract read(req: ServerUnaryCall<ReadRequest>, callback: sendUnaryData<ReadResponse>): void;
+    abstract update(req: ServerUnaryCall<UpdateRequest>, callback: sendUnaryData<UpdateResponse>): void;
+    abstract delete(req: ServerUnaryCall<DeleteRequest>, callback: sendUnaryData<Empty>): void;
+    abstract cancel(req: ServerUnaryCall<Empty>, callback: sendUnaryData<Empty>): void;
+    abstract getPluginInfo(req: ServerUnaryCall<Empty>, callback: sendUnaryData<PluginInfo>): void;
+}
+
 @Injectable()
-export class RootProvider implements IResourceProviderServer {
+export class RootProviderImpl extends RootProvider {
     constructor(
         @Inject(PROVIDERS) protected readonly providers: IProvider[],
         protected readonly providerResolver: ProviderResolver,
         protected readonly pluginInfoResolver: PluginInfoResolver,
         protected readonly configuration: Configuration,
         @Optional() protected readonly schemaResolver?: SchemaResolver
-    ) {}
+    ) {
+        super();
+    }
 
     getPluginInfo(req: ServerUnaryCall<unknown>, callback: sendUnaryData<PluginInfo>) {
         try {

@@ -21,7 +21,7 @@ import { Configuration, ConfigurationImpl } from './configuration';
 import { PluginInfoResolver, PluginInfoResolverImpl } from './plugin-info.resolver';
 import { IProvider } from './provider.interface';
 import { ProviderResolver, ProviderResolverImpl } from './provider.resolver';
-import { RootProvider } from './root-provider';
+import { RootProvider, RootProviderImpl } from './root-provider';
 import { SchemaResolver, SchemaResolverImpl } from './schema.resolver';
 
 jest.mock('./provider.resolver');
@@ -39,7 +39,7 @@ describe('provider / root-provider', () => {
         let configuration: jest.Mocked<Configuration>;
 
         beforeEach(() => {
-            root = new RootProvider(
+            root = new RootProviderImpl(
                 (providers = [new ProviderMockImpl(), new ProviderMockImpl()]),
                 (providerResolver = new ProviderResolverImpl(providers) as any),
                 (pluginInfoResolver = new PluginInfoResolverImpl({} as any) as any),
@@ -51,7 +51,7 @@ describe('provider / root-provider', () => {
         describe('getPluginInfo', () => {
             it('should call plugin-info provider', () => {
                 pluginInfoResolver.getPluginInfo.mockReturnValue({ version: '1.22.333' });
-                const req = mockServerUnaryCall({});
+                const req = mockServerUnaryCall<Empty>({} as any);
                 const cb = jest.fn();
                 root.getPluginInfo(req, cb);
 
@@ -67,7 +67,7 @@ describe('provider / root-provider', () => {
                 pluginInfoResolver.getPluginInfo.mockImplementation(() => {
                     throw new Error('err msg');
                 });
-                const req = mockServerUnaryCall({});
+                const req = mockServerUnaryCall<Empty>({} as any);
                 const cb = jest.fn();
                 root.getPluginInfo(req, cb);
 
@@ -108,7 +108,7 @@ describe('provider / root-provider', () => {
             });
 
             it('should throw "not implemented" error on missing implementation', () => {
-                root = new RootProvider(
+                root = new RootProviderImpl(
                     (providers = [new ProviderMockImpl(), new ProviderMockImpl()]),
                     (providerResolver = new ProviderResolverImpl(providers) as any),
                     (pluginInfoResolver = new PluginInfoResolverImpl({} as any) as any),
