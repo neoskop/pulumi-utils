@@ -1,21 +1,13 @@
-import { Output, Input, output } from '@pulumi/pulumi';
+import { Input, Output } from '@pulumi/pulumi';
 
 export type AsOutputs<T extends {}> = {
     [K in keyof T]: Output<T[K]>;
 };
 
-export type AsInput<T> = T extends string | number | boolean
-    ? Input<T>
-    : T extends (infer A)[]
-    ? Input<AsInput<A>[]>
-    : T extends {}
-    ? Input<
-          {
-              [K in keyof T]: AsInput<T[K]>;
-          }
-      >
-    : never;
+export type Scalar = string | number | boolean | null;
 
-export type AsInputs<T extends {}> = {
-    [K in keyof T]: AsInput<T[K]>;
+export type AsInput<T> = T extends object ? Input<{ [K in keyof T]: T[K] extends Scalar ? Input<T[K]> : AsInput<T[K]> }> : Input<T>;
+
+export type AsInputs<T> = {
+    [K in keyof T]: T[K] extends Scalar ? Input<T[K]> : AsInput<T[K]>;
 };
