@@ -1,4 +1,4 @@
-import { PluginInfo } from '@neoskop/pulumi-utils-grpc';
+import { PluginInfo } from '@pulumi-utils/grpc';
 import { Inject, Injectable } from 'injection-js';
 
 import { PLUGIN_INFO } from './tokens';

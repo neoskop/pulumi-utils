@@ -28,7 +28,7 @@ Trace:
 
 npm manifest: 
   {
-      "name": "@neoskop/pulumi-utils-grpc",
+      "name": "@pulumi-utils/grpc",
       "description": "Utilities for Pulumi",
       "version": "0.0.0",
       "repository": "https://github.com/neoskop/pulumi-utils",

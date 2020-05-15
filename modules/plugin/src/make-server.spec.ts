@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 
-import { EngineClient } from '@neoskop/pulumi-utils-grpc';
+import { EngineClient } from '@pulumi-utils/grpc';
 
 import { makeServer } from './make-server';
 import { Configuration, ConfigurationImpl } from './provider/configuration';

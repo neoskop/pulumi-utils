@@ -1,7 +1,7 @@
 {
-    "name": "@neoskop/pulumi-utils-sdk",
+    "name": "@pulumi-utils/sdk",
     "description": "Utilities for Pulumi SDK development",
-    "version": "0.0.0",
+    "version": "0.1.0",
     "repository": "https://github.com/neoskop/pulumi-utils",
     "author": "Mark Wecke <wecke@neoskop.de>",
     "license": "MIT",
@@ -18,20 +18,20 @@
         "publish-latest": "npm run publish-latest-only && npm dist-tag add `jq '.name' package.json -r`@`jq '.version' package.json -r` next"
     },
     "dependencies": {
-        "@neoskop/pulumi-utils-common": "0.0.0",
-        "@pulumi/pulumi": "1.12.1",
+        "@pulumi-utils/common": "0.1.0",
+        "@pulumi/pulumi": "2.0.0",
         "tslib": "1.11.1"
     },
     "devDependencies": {
-        "@types/jest": "25.1.4",
-        "@types/prettier": "1.19.0",
-        "jest": "25.1.0",
-        "jest-circus": "25.1.0",
+        "@types/jest": "25.2.1",
+        "@types/prettier": "2.0.0",
+        "jest": "25.4.0",
+        "jest-circus": "25.4.0",
         "jest-spec-reporter": "1.0.12",
-        "prettier": "1.19.1",
+        "prettier": "2.0.5",
         "rimraf": "3.0.2",
-        "ts-jest": "25.2.1",
-        "ts-node": "8.6.2",
+        "ts-jest": "25.4.0",
+        "ts-node": "8.9.0",
         "typescript": "3.8.3"
     }
 }

@@ -1,4 +1,4 @@
-import { IResourceProviderServer, ResourceProviderService, EngineClient } from '@neoskop/pulumi-utils-grpc';
+import { IResourceProviderServer, ResourceProviderService, EngineClient } from '@pulumi-utils/grpc';
 import { Server, ServerCredentials, credentials } from 'grpc';
 import { promisify } from 'util';
 import { Writable } from 'stream';
@@ -22,6 +22,8 @@ export async function serve(
     const port = await promisify(server.bindAsync.bind(server))('0.0.0.0:0', ServerCredentials.createInsecure());
 
     stdout && stdout.write(`${port}\n`);
+
+    server.start();
 
     return { server, port };
 }

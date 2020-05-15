@@ -364,6 +364,9 @@ export class AnalyzerInfo extends jspb.Message {
     getSupportsconfig(): boolean;
     setSupportsconfig(value: boolean): void;
 
+    getInitialconfigMap(): jspb.Map<string, PolicyConfig>;
+    clearInitialconfigMap(): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): AnalyzerInfo.AsObject;
     static toObject(includeInstance: boolean, msg: AnalyzerInfo): AnalyzerInfo.AsObject;
@@ -381,6 +384,8 @@ export namespace AnalyzerInfo {
         policiesList: Array<PolicyInfo.AsObject>;
         version: string;
         supportsconfig: boolean;
+
+        initialconfigMap: Array<[string, PolicyConfig.AsObject]>;
     };
 }
 

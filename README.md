@@ -8,35 +8,35 @@ This repository uses [Yarn Workspaces](https://classic.yarnpkg.com/en/docs/works
 
 ### Common
 
-[![NPM version](npm-badge-common)](npm-link-common)[![License](licence-common)](licence-link)
+[![NPM version][npm-badge-common]][npm-link-common][![License][licence-common]][licence-link]
 
 A collection of utilities useful in SDK and plugin development.
 [See readme](./modules/common) for details.
 
 ### GRPC
 
-[![NPM version](npm-badge-grpc)](npm-link-grpc)[![License](licence-grpc)](licence-link)
+[![NPM version][npm-badge-grpc]][npm-link-grpc][![License][licence-grpc]][licence-link]
 
 Generated server and client code for [pulumi protobuf format](https://github.com/pulumi/pulumi/tree/master/sdk/proto).
 [See readme](./modules/grpc) for details.
 
 ### Plugin
 
-[![NPM version](npm-badge-plugin)](npm-link-plugin)[![License](licence-plugin)](licence-link)
+[![NPM version][npm-badge-plugin]][npm-link-plugin][![License][licence-plugin]][licence-link]
 
 A library to create plugins for pulumi.
 [See readme](./modules/plugin) for details.
 
 ### SDK
 
-[![NPM version](npm-badge-sdk)](npm-link-sdk)[![License](licence-sdk)](licence-link)
+[![NPM version][npm-badge-sdk]][npm-link-sdk][![License][licence-sdk]][licence-link]
 
 A collection of helper utilities for SDK development.
 [See readme](./modules/sdk) for details.
 
 ## License
 
-[MIT](licence-link)
+[MIT][licence-link]
 
 [npm-badge-common]: https://img.shields.io/npm/v/@neoskop/pulumi-utils-common
 [npm-link-common]: https://npmjs.com/package/@neoskop/pulumi-utils-common
@@ -46,5 +46,8 @@ A collection of helper utilities for SDK development.
 [npm-link-plugin]: https://npmjs.com/package/@neoskop/pulumi-utils-plugin
 [npm-badge-sdk]: https://img.shields.io/npm/v/@neoskop/pulumi-utils-sdk
 [npm-link-sdk]: https://npmjs.com/package/@neoskop/pulumi-utils-sdk
-[license-link]: https://github.com/neoskop/pulumi-utils/blob/master/LICENSE
-[licence-common]: https://img.shields.io/npm/l/%40neoskop%2Fpulumi-utils-common.svg
+[licence-link]: https://github.com/neoskop/pulumi-utils/blob/master/LICENSE
+[licence-common]: https://img.shields.io/npm/l/%40neoskop%2Fpulumi-utils-common
+[licence-grpc]: https://img.shields.io/npm/l/%40neoskop%2Fpulumi-utils-grpc
+[licence-plugin]: https://img.shields.io/npm/l/%40neoskop%2Fpulumi-utils-plugin
+[licence-sdk]: https://img.shields.io/npm/l/%40neoskop%2Fpulumi-utils-sdk

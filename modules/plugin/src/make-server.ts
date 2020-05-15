@@ -1,10 +1,10 @@
-import { EngineClient, GetSchemaResponse, PluginInfo } from '@neoskop/pulumi-utils-grpc';
+import { EngineClient, GetSchemaResponse, PluginInfo } from '@pulumi-utils/grpc';
 import { Injector, Provider, ReflectiveInjector } from 'injection-js';
 
 import { PluginInfoResolver, PluginInfoResolverImpl } from './provider/plugin-info.resolver';
 import { IProvider } from './provider/provider.interface';
 import { ProviderResolver, ProviderResolverImpl } from './provider/provider.resolver';
-import { RootProvider } from './provider/root-provider';
+import { RootProvider, RootProviderImpl } from './provider/root-provider';
 import { SchemaResolver, SchemaResolverImpl } from './provider/schema.resolver';
 import { NAME, PLUGIN_INFO, PROVIDERS, SCHEMA, ACCEPT_SECRETS } from './provider/tokens';
 import { ResourceProviderFactory } from './serve';
@@ -35,7 +35,7 @@ export function makeServer(
         SchemaResolver: SchemaResolver_ = SchemaResolverImpl,
         ProviderResolver: ProviderResolver_ = ProviderResolverImpl,
         Configuration: Configuration_ = ConfigurationImpl,
-        RootProvider: RootProvider_ = RootProvider,
+        RootProvider: RootProvider_ = RootProviderImpl,
         providers = [],
         injector: parentInjector
     }: MakeServerOptions = {}
@@ -51,10 +51,14 @@ export function makeServer(
             { provide: PLUGIN_INFO, useValue: ensure<PluginInfo.AsObject>({ version }) },
             { provide: NAME, useValue: name },
             { provide: ACCEPT_SECRETS, useValue: acceptSecrets },
-            { provide: PluginInfoResolver, useClass: PluginInfoResolver_ },
-            { provide: ProviderResolver, useClass: ProviderResolver_ },
-            { provide: Configuration, useClass: Configuration_ },
-            { provide: RootProvider, useClass: RootProvider_ },
+            PluginInfoResolver_,
+            ProviderResolver_,
+            Configuration_,
+            RootProvider_,
+            { provide: PluginInfoResolver, useExisting: PluginInfoResolver_ },
+            { provide: ProviderResolver, useExisting: ProviderResolver_ },
+            { provide: Configuration, useExisting: Configuration_ },
+            { provide: RootProvider, useExisting: RootProvider_ },
             ...(schema ? [{ provide: SCHEMA, useValue: ensure<GetSchemaResponse.AsObject>({ schema }) }] : []),
             ...(schema || SchemaResolver_ !== SchemaResolverImpl ? [{ provide: SchemaResolver, useClass: SchemaResolver_ }] : []),
             ...providers,

@@ -9,10 +9,10 @@ describe('protobuf / Struct', () => {
     });
     it('should not throw on undefined value', () => {
         expect(() => {
-            Struct.fromJavaScript({ foo: undefined } as any);
+            Struct.fromJavaScript({ foo: undefined });
         }).not.toThrow();
     });
     it('should convert object', () => {
-        expect(Struct.fromJavaScript({ foo: 'bar', foobar: undefined } as any).toJavaScript()).toEqual({ foo: 'bar' });
+        expect(Struct.fromJavaScript({ foo: 'bar', foobar: undefined }).toJavaScript()).toEqual({ foo: 'bar' });
     });
 });

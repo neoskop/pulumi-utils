@@ -1,4 +1,4 @@
-import { GetSchemaResponse, PluginInfo } from '@neoskop/pulumi-utils-grpc';
+import { GetSchemaResponse, PluginInfo } from '@pulumi-utils/grpc';
 import { InjectionToken } from 'injection-js';
 
 import { IProvider } from './provider.interface';
