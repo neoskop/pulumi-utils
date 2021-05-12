@@ -21,7 +21,7 @@
         "@types/google-protobuf": "3.7.2",
         "@types/node": "13.13.2",
         "google-protobuf": "3.11.4",
-        "grpc": "1.24.2",
+        "grpc": "1.24.9",
         "tslib": "1.11.1"
     },
     "devDependencies": {
